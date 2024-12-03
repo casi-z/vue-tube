@@ -111,7 +111,7 @@ const isPlayIndicatorActive = ref<boolean>(false)
 
 
 
-const handleVideoClick = (event: PointerEvent) => {
+const handleVideoClick = () => {
   togglePlay()
 }
 const togglePlay = () => {
@@ -154,7 +154,7 @@ const formatTime = (seconds: number) => {
   return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
 };
 
-const pressTimer = ref<NodeJS.Timeout | null>(null);
+const pressTimer = ref<ReturnType<typeof setTimeout> | null>(null);
 
 const startPress = () => {
   // Устанавливаем таймер на 500ms (или любое другое значение)
